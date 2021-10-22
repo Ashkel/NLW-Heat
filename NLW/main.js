@@ -1,5 +1,4 @@
 const linksSocialMedia = {
-	name: 'Diego Wesley',
 	github: 'Ashkel',
 	youtube: 'channel/UC6zYGLM0JzJ8B7yjEd0Suqw',
 	facebook: 'diegowesley.demello',
@@ -7,76 +6,40 @@ const linksSocialMedia = {
 	twitter: 'blacktwister_n',
 };
 
-userName.textContent = linksSocialMedia.name;
-
-function changeSocialMediaLinks() {
-	for (let li of socialMedia.children) {
-		const social = li.getAttribute('class');
-
-		li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`;
-	}
-}
-
-changeSocialMediaLinks();
-
-// change back if this breaks on earlier devices
 let utils = {};
 
-utils.get = url => {
-	return new Promise(function (resolve, reject) {
-		let request = new XMLHttpRequest();
+// altera os "botões" do social media
+utils.changeSocialMediaLinks = () => {
+	// itera os filhos da ul#socialMedia
+	for (let li of socialMedia.children) {
+		// pega a classe da li
+		const social = li.getAttribute('class');
 
-		request.open('GET', url);
-
-		request.onload = function () {
-			// handle both remote 200 responses and local zero responses...
-			if (request.status == 200) {
-				resolve(request.response);
-			} else {
-				reject(Error(`promise error with status: ${request.status}`));
-			}
-		};
-
-		request.onerror = function (err) {
-			reject(Error(`Network Error with ${url} -> ${err}`));
-		};
-
-		request.send();
-	});
+		// altera o link de cada botão, usando a classe da li
+		// e os dados do objeto linksSocialMedia
+		li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`;
+	}
 };
 
-utils.getJSON = async function (url) {
-	let data = {};
+// chama para alterar os botões do social media
+utils.changeSocialMediaLinks();
 
-	let string = null;
+// preencher os dados do github na pagina
+utils.getGithubUserProfile = user => {
+	const url = `https://api.github.com/users/${user}`;
 
-	try {
-		string = await utils.get(url);
-	} catch (e) {
-		alert(`error: ${e}`);
-	}
-
-	try {
-		data = JSON.parse(string);
-	} catch (e) {
-		alert(`parse error: ${e}`);
-	}
-
-	return data;
-};
-
-utils
-	.getJSON(`https://api.github.com/users/${linksSocialMedia['github']}`)
-	.then(function (data) {
-		try {
+	// chamada para a api do github que retorna uma promise,
+	// que deve ser tratada com then e catch
+	fetch(url)
+		.then(response => response.json())
+		.then(data => {
 			userName.textContent = data.name;
-			userAvatar.setAttribute('src', data.avatar_url);
-			githubLogin.textContent = data.login;
-			githubBio.textContent = data.bio;
-		} catch (e) {
-			alert(`error: ${e}`);
-		}
-	})
-	.catch(function (err) {
-		console.log(err);
-	});
+			userAvatar.src = data.avatar_url;
+			userLink.href = data.html_url;
+			userLogin.textContent = data.login;
+			userBio.textContent = data.bio;
+		})
+		.catch(err => console.log(err));
+};
+
+utils.getGithubUserProfile(linksSocialMedia['github']);
