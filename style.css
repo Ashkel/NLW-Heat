@@ -104,6 +104,10 @@ ul {
 	justify-content: center;
 }
 
-ul li a img:hover {
-	margin-top: 0.1rem;
+ul img {
+    transition: 0.5s;
+}
+
+ul img:hover {
+	transform: translateY(-5px);
 }
