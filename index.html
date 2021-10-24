@@ -1,107 +1,98 @@
-<!--
-	HTML É:
-
-	HyperText - Hiper Texto
-		-> É um texto com links
-	
-	Markup - Marcação
-		-> Tags
-
-	Language - Linguagem
-	 -> Regras de uma linguagem
--->
 <!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Diego Wesley - NLW Heat</title>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="stylesheet" href="style.css" />
+	<title>NLW - Heat</title>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+		rel="stylesheet"
+	/>
+	
+	<link rel="stylesheet" href="./assets/css/style.css">
 
-		<meta name="theme-color" content="hsl(240, 9%, 39%)" />
-	</head>
-	<body>
-		<main>
-			<div class="container">
-				<div class="avatar">
-					<span>
-						<img
-							src="images/selo-rocketseat.svg"
-							alt="Selo Rocketseat"
-						/>
-					</span>
-					<img
-						id="userAvatar"
-						src="http://lorempixel.com/185/185/people/"
-						alt="Foto
-					pessoal"
-					/>
-				</div>
+	<meta name="theme-color" content="hsl(240, 9%, 39%)" />
+</head>
+<body>
+	<main>
+		<div id="nameTag">
+			<div id="ribbon"></div>
 
-				<h1 id="userName">my Name</h1>
+			<div id="card">
+				<div class="container">
+					<div class="breaking"></div>
 
-				<a
-					id="userLink"
-					href="https://github.com/Ashkel"
-					target="_blank"
-				>
-					<img src="images/github-icon.svg" alt="&iacute;cone do github" />
-					<span id="userLogin">My Github Id</span>
-				</a>
+					<div class="avatar">
+						<span>
+							<img src="./assets/images/selo-rocketseat.svg" alt="Selo Rocketseat">
+						</span>
+						<img id="userAvatar" src="http://lorempixel.com/185/185/people/" alt="Foto
+						pessoal">
+					</div>
 
-				<p id="userBio">Hi, i'm a new developer.</p>
+					<!-- from now on, some classes are just for semantics -->
 
-				<ul id="socialMedia">
-					<li class="youtube">
-						<a href="https://youtube.com/" target="_blank">
-							<img
-								src="images/youtube-icon.svg"
-								alt="&iacute;cone do youtube"
-							/>
+					<div class="info">
+						<h1 id="userName">Diego Wesley</h1>
+
+						<a
+							id="userGithub"
+							href="https://github.com/Ashkel"
+							target="_blank"
+						>
+							<img src="./assets/images/github-icon.svg" alt="&iacute;cone do github" />
+							<span id="userLogin">Ashkel</span>
 						</a>
-					</li>
-					<li class="facebook">
-						<a href="https://facebook.com/" target="_blank">
-							<img
-								src="images/facebook-icon.svg"
-								alt="&iacute;cone do youtube"
-							/>
-						</a>
-					</li>
-					<li class="instagram">
-						<a href="https://instagram.com/" target="_blank">
-							<img
-								src="images/instagram-icon.svg"
-								alt="&iacute;cone do youtube"
-							/>
-						</a>
-					</li>
-					<li class="twitter">
-						<a href="https://twitter.com/" target="_blank">
-							<img
-								src="images/twitter-icon.svg"
-								alt="icone do youtube"
-							/>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</main>
 
-		<script src="main.js"></script>
-	</body>
+						<p id="userBio">Hi, i'm a new developer.</p>
+					</div>
+
+					<div class="socialMedia">
+						<ul id="socialMedia">
+							<li class="youtube">
+								<a href="https://youtube.com/" target="_blank">
+									<img
+										src="./assets/images/youtube-icon.svg"
+										alt="&iacute;cone do youtube"
+									/>
+								</a>
+							</li>
+							<li class="facebook">
+								<a href="https://facebook.com/" target="_blank">
+									<img
+										src="./assets/images/facebook-icon.svg"
+										alt="&iacute;cone do youtube"
+									/>
+								</a>
+							</li>
+							<li class="instagram">
+								<a href="https://instagram.com/" target="_blank">
+									<img
+										src="./assets/images/instagram-icon.svg"
+										alt="&iacute;cone do youtube"
+									/>
+								</a>
+							</li>
+							<li class="twitter">
+								<a href="https://twitter.com/" target="_blank">
+									<img
+										src="./assets/images/twitter-icon.svg"
+										alt="&iacute;cone do youtube"
+									/>
+								</a>
+							</li>
+						</ul>
+					</div> <!-- div .socialMedia -->
+				</div> <!-- div .container -->
+			</div> <!-- div #card -->
+		</div> <!-- div #nameTag -->
+	</main>
+
+	<script src="./assets/js/main.js"></script>
+</body>
 </html>
-<!-- Senha aula 1: #RumoAoPróximoNível -->
-<!-- Senha aula 2: #Protagonistas -->
-<!-- Senha aula 3: #ImaginarConstruirTransformar -->
-<!-- Senha aula 4: #SemLimites -->
-<!-- Senha aula 5: #BuildTheFuture -->
